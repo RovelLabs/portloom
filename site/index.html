@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portloom — Высокопроизводительный локальный шлюз разработчика под Windows</title>
+  <meta name="description" content="Управление портами Windows, профили hosts, выпуск доверенных SSL-сертификатов и обратный прокси с инспектором вебхуков в едином рабочем пространстве. 0% телеметрии.">
+  <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-nav">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <img src="assets/brand/icon.svg" alt="Portloom" width="28" height="28">
+        <div>Port<span>loom</span></div>
+      </a>
+      <div class="nav-links">
+        <a href="#features" class="nav-link" data-ru="Возможности" data-en="Features">Возможности</a>
+        <a href="#comparison" class="nav-link" data-ru="Сравнение" data-en="Comparison">Сравнение</a>
+        <a href="#architecture" class="nav-link" data-ru="Архитектура" data-en="Architecture">Архитектура</a>
+        <a href="#download" class="nav-link" data-ru="Скачать" data-en="Download">Скачать</a>
+        <a href="https://github.com/portloom/portloom" target="_blank" class="nav-link">GitHub ↗</a>
+        <button id="langToggle" class="lang-btn">🇬🇧 EN</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-badge" data-ru="⚡ Open Source • Windows 10/11 • 0% Телеметрии" data-en="⚡ Open Source • Windows 10/11 • 0% Telemetry">
+      ⚡ Open Source • Windows 10/11 • 0% Телеметрии
+    </div>
+    
+    <h1 class="hero-title">
+      <span data-ru="Локальный шлюз" data-en="Local Developer Gateway">Локальный шлюз</span> <br>
+      <span data-ru="разработчика под Windows" data-en="Built for Windows">разработчика под Windows</span>
+    </h1>
+
+    <p class="hero-subtitle" data-ru="Portloom связывает воедино управление портами, профили hosts, 1-клик выпуск доверенных локальных SSL-сертификатов и высокоскоростной reverse proxy с инспектором вебхуков." data-en="Portloom weaves together Windows port management, hosts profiles, 1-click trusted local SSL certificates, and a high-performance reverse proxy with live webhook inspection.">
+      Portloom связывает воедино управление портами, профили hosts, 1-клик выпуск доверенных локальных SSL-сертификатов и высокоскоростной reverse proxy с инспектором вебхуков.
+    </p>
+
+    <div class="hero-cta-group">
+      <a href="#download" class="btn-primary" data-ru="Начать бесплатно" data-en="Get Started Free">Начать бесплатно</a>
+      <a href="https://github.com/portloom/portloom" target="_blank" class="btn-outline">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub Repository
+      </a>
+      <div class="terminal-pill">
+        <span>$</span> npx portloom
+      </div>
+    </div>
+
+    <!-- Live Real Screenshot Frame -->
+    <div class="screenshot-frame">
+      <img src="assets/screenshots/dashboard.png" alt="Portloom Workspace Dashboard">
+    </div>
+  </section>
+
+  <!-- Problem vs Solution Comparison -->
+  <section id="comparison" class="comparison-section">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title" data-ru="Хватит мучиться с сетевым окружением на Windows" data-en="Stop Wrestling with Windows Dev Networking">Хватит мучиться с сетевым окружением на Windows</h2>
+        <p style="color: var(--text-secondary);" data-ru="Сравните привычный сценарий и разработку с Portloom" data-en="Compare standard developer friction against the Portloom workflow">Сравните привычный сценарий и разработку с Portloom</p>
+      </div>
+
+      <div class="comparison-grid">
+        <div class="comp-card before">
+          <div class="comp-title" style="color: var(--accent-rose);" data-ru="❌ До Portloom" data-en="❌ Without Portloom">❌ До Portloom</div>
+          <ul class="comp-list">
+            <li>
+              <span>⚠️</span>
+              <div data-ru="Ошибка EADDRINUSE: поиск PID через netstat -ano и ручной taskkill в терминале." data-en="EADDRINUSE errors: manually hunting PIDs with netstat and running taskkill.">Ошибка EADDRINUSE: поиск PID через netstat -ano и ручной taskkill в терминале.</div>
+            </li>
+            <li>
+              <span>⚠️</span>
+              <div data-ru="Браузер блокирует Web Crypto, Service Workers и TMA из-за отсутствия HTTPS." data-en="Browsers block Web Crypto, Service Workers, and TMA due to missing HTTPS.">Браузер блокирует Web Crypto, Service Workers и TMA из-за отсутствия HTTPS.</div>
+            </li>
+            <li>
+              <span>⚠️</span>
+              <div data-ru="Редактирование hosts через Блокнот от Администратора, поломка комментариев и синтаксиса." data-en="Editing hosts via Notepad as Admin, corrupting comments and file formatting.">Редактирование hosts через Блокнот от Администратора, поломка комментариев и синтаксиса.</div>
+            </li>
+            <li>
+              <span>⚠️</span>
+              <div data-ru="CORS-ошибки при связке React (:5173) и API (:8000), либо запуск тяжелого Docker." data-en="CORS errors connecting React (:5173) to backend (:8000), or running heavy Docker.">CORS-ошибки при связке React (:5173) и API (:8000), либо запуск тяжелого Docker.</div>
+            </li>
+            <li>
+              <span>⚠️</span>
+              <div data-ru="Необходимость платных облачных туннелей (ngrok) для просмотра вебхуков." data-en="Reliance on paid cloud tunnels (ngrok) to inspect incoming webhooks.">Необходимость платных облачных туннелей (ngrok) для просмотра вебхуков.</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="comp-card after">
+          <div class="comp-title" style="color: var(--accent-cyan);" data-ru="✨ С Portloom" data-en="✨ With Portloom">✨ С Portloom</div>
+          <ul class="comp-list">
+            <li>
+              <span>✅</span>
+              <div data-ru="Интерактивная таблица всех портов: освобождение любого порта в 1 клик." data-en="Interactive Port Matrix: free any occupied port in a single click.">Интерактивная таблица всех портов: освобождение любого порта в 1 клик.</div>
+            </li>
+            <li>
+              <span>✅</span>
+              <div data-ru="Автоматический выпуск доверенного SSL (Root CA) для любых локальных доменов." data-en="Automated trusted Root CA SSL generation for any custom local domain.">Автоматический выпуск доверенного SSL (Root CA) для любых локальных доменов.</div>
+            </li>
+            <li>
+              <span>✅</span>
+              <div data-ru="Визуальный менеджер hosts с профилями проектов и автоматическими бэкапами." data-en="Visual Hosts Manager with project profiles, toggles, and automated backups.">Визуальный менеджер hosts с профилями проектов и автоматическими бэкапами.</div>
+            </li>
+            <li>
+              <span>✅</span>
+              <div data-ru="Шлюз reverse proxy объединяет фронтенд и бэкенд на едином красивом домене." data-en="Reverse proxy unifies frontend and backend under a single clean domain.">Шлюз reverse proxy объединяет фронтенд и бэкенд на едином красивом домене.</div>
+            </li>
+            <li>
+              <span>✅</span>
+              <div data-ru="Локальный инспектор запросов в реальном времени с поддержкой оффлайн-моков." data-en="Real-time local traffic inspector with headers, JSON viewer, and offline mocks.">Локальный инспектор запросов в реальном времени с поддержкой оффлайн-моков.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Deep Dive -->
+  <section id="features" class="features-section">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title" data-ru="Всё необходимое в одном приложении" data-en="Everything You Need in One Unified Workspace">Всё необходимое в одном приложении</h2>
+        <p style="color: var(--text-secondary);" data-ru="Монолитная функциональность, нулевой оверхед, бескомпромиссная надежность." data-en="Monolithic capability, zero overhead, uncompromising stability.">Монолитная функциональность, нулевой оверхед, бескомпромиссная надежность.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3 class="feature-title" data-ru="Матрица портов Windows" data-en="Live Port Matrix">Матрица портов Windows</h3>
+          <p class="feature-desc" data-ru="Мгновенное сканирование всех слушающих сокетов. Отображение PID, имени исполняемого файла, памяти и защита системных служб Windows от случайного убийства." data-en="Instant scanning of all listening sockets. View PID, process name, RAM usage, and built-in protection for Windows system processes.">
+            Мгновенное сканирование всех слушающих сокетов. Отображение PID, имени исполняемого файла, памяти и защита системных служб Windows от случайного убийства.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3 class="feature-title" data-ru="1-Клик доверенный SSL (Root CA)" data-en="1-Click Trusted SSL (Root CA)">1-Клик доверенный SSL (Root CA)</h3>
+          <p class="feature-desc" data-ru="Автономный генератор локального Root CA и выпуск X.509 сертификатов с SAN для любых доменов (*.local, localhost). Автоматическая интеграция с хранилищем Windows." data-en="Self-sovereign local Root CA generator minting X.509 certs with SAN for *.local and custom domains. Seamless Windows cert store integration.">
+            Автономный генератор локального Root CA и выпуск X.509 сертификатов с SAN для любых доменов (*.local, localhost). Автоматическая интеграция с хранилищем Windows.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🌐</div>
+          <h3 class="feature-title" data-ru="Менеджер профилей Hosts" data-en="Hosts Profiles Orchestrator">Менеджер профилей Hosts</h3>
+          <p class="feature-desc" data-ru="Безопасная атомарная запись в C:\Windows\System32\drivers\etc\hosts с созданием резервных копий и мгновенным сбросом DNS-кэша через ipconfig /flushdns." data-en="Safe atomic writing to hosts file with automatic timestamped backups and instant DNS cache flushing via ipconfig /flushdns.">
+            Безопасная атомарная запись в C:\Windows\System32\drivers\etc\hosts с созданием резервных копий и мгновенным сбросом DNS-кэша через ipconfig /flushdns.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔀</div>
+          <h3 class="feature-title" data-ru="Динамический Reverse Proxy" data-en="Dynamic Reverse Proxy">Динамический Reverse Proxy</h3>
+          <p class="feature-desc" data-ru="Маршрутизация https://app.local → :5173 и https://app.local/api → :8000 с прозрачной поддержкой WebSocket (Vite HMR) и авто-нормализацией заголовков CORS." data-en="Route https://app.local to :5173 and /api to :8000 with transparent WebSocket pass-through for Vite HMR and CORS normalizer.">
+            Маршрутизация https://app.local → :5173 и https://app.local/api → :8000 с прозрачной поддержкой WebSocket (Vite HMR) и авто-нормализацией заголовков CORS.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📡</div>
+          <h3 class="feature-title" data-ru="Инспектор вебхуков и трафика" data-en="Webhook & Traffic Inspector">Инспектор вебхуков и трафика</h3>
+          <p class="feature-desc" data-ru="Кольцевой буфер запросов в реальном времени. Инспекция заголовков, форматированный JSON полезной нагрузки, расчет задержки в миллисекундах и экспорт в cURL." data-en="Real-time request ring buffer. Inspect headers, formatted JSON body, millisecond latency measurement, and 1-click cURL export.">
+            Кольцевой буфер запросов в реальном времени. Инспекция заголовков, форматированный JSON полезной нагрузки, расчет задержки в миллисекундах и экспорт в cURL.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3 class="feature-title" data-ru="0% телеметрии и 100% оффлайн" data-en="0% Telemetry & 100% Offline">0% телеметрии и 100% оффлайн</h3>
+          <p class="feature-desc" data-ru="Работает полностью изолированно (Air-Gapped). Без аккаунтов, без токенов, без внешних CDN и облачных сервисов. Ваши данные никогда не покидают ваш ПК." data-en="Operates completely air-gapped. Zero accounts, zero tokens, zero external CDN dependencies. Your data never leaves your computer.">
+            Работает полностью изолированно (Air-Gapped). Без аккаунтов, без токенов, без внешних CDN и облачных сервисов. Ваши данные никогда не покидают ваш ПК.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download & Quickstart Section -->
+  <section id="download" class="download-section">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title" data-ru="Установка и запуск" data-en="Installation & Quick Start">Установка и запуск</h2>
+        <p style="color: var(--text-secondary);" data-ru="Выберите удобный для вас способ запуска на Windows" data-en="Choose your preferred way to run Portloom on Windows">Выберите удобный для вас способ запуска на Windows</p>
+      </div>
+
+      <div class="download-grid">
+        <div class="download-card">
+          <div>
+            <div class="download-header" data-ru="🚀 Мгновенный запуск (NPX)" data-en="🚀 Instant Launch (NPX)">🚀 Мгновенный запуск (NPX)</div>
+            <div class="download-desc" data-ru="Запуск без постоянной установки через Node.js" data-en="Run immediately without permanent installation">Запуск без постоянной установки через Node.js</div>
+            <div class="code-box">npx portloom</div>
+          </div>
+          <span style="font-size: 12px; color: var(--text-muted);" data-ru="Требуется Node.js >= 18" data-en="Requires Node.js >= 18">Требуется Node.js >= 18</span>
+        </div>
+
+        <div class="download-card">
+          <div>
+            <div class="download-header" data-ru="📦 Глобальная установка (NPM)" data-en="📦 Global Install (NPM)">📦 Глобальная установка (NPM)</div>
+            <div class="download-desc" data-ru="Доступ к утилите из любого терминала Windows" data-en="Available from any Windows terminal">Доступ к утилите из любого терминала Windows</div>
+            <div class="code-box">npm install -g portloom<br>portloom</div>
+          </div>
+          <span style="font-size: 12px; color: var(--text-muted);" data-ru="Добавляет команду portloom в PATH" data-en="Adds portloom command to system PATH">Добавляет команду portloom в PATH</span>
+        </div>
+
+        <div class="download-card">
+          <div>
+            <div class="download-header" data-ru="💾 Портативная версия (ZIP)" data-en="💾 Portable Release (ZIP)">💾 Портативная версия (ZIP)</div>
+            <div class="download-desc" data-ru="Готовый архив для Windows x64. Распаковал и запустил." data-en="Pre-built standalone package for Windows x64.">Готовый архив для Windows x64. Распаковал и запустил.</div>
+            <div class="code-box">portloom-v1.0.0-win-x64.zip</div>
+          </div>
+          <a href="https://github.com/portloom/portloom/releases" target="_blank" class="btn-primary" style="text-align: center;" data-ru="Скачать ZIP" data-en="Download ZIP">Скачать ZIP</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="assets/brand/icon.svg" alt="Portloom" width="22" height="22">
+        <span style="font-weight: 700;">Portloom</span>
+        <span style="color: var(--text-muted); font-size: 13px;">— MIT License. Open Source 2026.</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/portloom/portloom" target="_blank" class="nav-link">GitHub</a>
+        <a href="https://github.com/portloom/portloom/blob/main/docs/ARCHITECTURE.md" target="_blank" class="nav-link">Docs</a>
+        <a href="https://github.com/portloom/portloom/blob/main/PRIVACY.md" target="_blank" class="nav-link">Privacy</a>
+        <a href="https://github.com/portloom/portloom/blob/main/ROADMAP.md" target="_blank" class="nav-link">Roadmap</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Bilingual switcher script
+    let currentLang = 'ru';
+    const langBtn = document.getElementById('langToggle');
+
+    langBtn.addEventListener('click', () => {
+      currentLang = currentLang === 'ru' ? 'en' : 'ru';
+      langBtn.textContent = currentLang === 'ru' ? '🇬🇧 EN' : '🇷🇺 RU';
+      document.documentElement.lang = currentLang;
+
+      document.querySelectorAll('[data-ru]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${currentLang}`);
+      });
+    });
+  </script>
+</body>
+</html>
