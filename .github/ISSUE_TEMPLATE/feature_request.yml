@@ -1,0 +1,29 @@
+name: 💡 Feature Request / Идея
+description: Предложить новую функцию или улучшение для Portloom
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Предлагайте идеи, которые помогут сделать Portloom еще полезнее для разработчиков!
+  - type: textarea
+    id: problem
+    attributes:
+      label: Какую проблему вы хотите решить?
+      description: Опишите сценарий, в котором текущего функционала недостаточно.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Предлагаемое решение
+      description: Как, по вашему мнению, должна работать новая функция?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Альтернативные решения
+      description: Рассматривали ли вы другие подходы?
+    validations:
+      required: false

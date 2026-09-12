@@ -1,0 +1,52 @@
+name: 🐛 Bug Report
+description: Сообщить об ошибке или сбое в работе Portloom
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо за вклад в улучшение Portloom! Пожалуйста, заполните форму ниже.
+  - type: input
+    id: version
+    attributes:
+      label: Версия Portloom
+      description: Например, v1.0.0 или вывод команды `portloom --version`
+      placeholder: v1.0.0
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Операционная система
+      options:
+        - Windows 11 (x64)
+        - Windows 10 (x64)
+        - Windows Server
+        - Другая / WSL
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Что произошло?
+      description: Четкое описание ошибки, сообщение или скриншот.
+    validations:
+      required: true
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Шаги для воспроизведения
+      description: Последовательность действий, приводящих к ошибке.
+      placeholder: |
+        1. Запустил dev-сервер на порту 3000
+        2. В Portloom нажал кнопку 'Kill'
+        3. Получил ошибку...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Ожидаемое поведение
+      description: Что должно было произойти?
+    validations:
+      required: false
