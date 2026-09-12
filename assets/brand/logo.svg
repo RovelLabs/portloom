@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 100" width="420" height="100">
+  <defs>
+    <linearGradient id="logoCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#00F0FF" />
+    </linearGradient>
+    <linearGradient id="logoEmerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+  </defs>
+
+  <!-- Icon Mark -->
+  <g transform="translate(10, 10)">
+    <rect width="80" height="80" rx="18" fill="#111827" stroke="#1E293B" stroke-width="2" />
+    <!-- 'P' Loom Spine -->
+    <rect x="22" y="18" width="6" height="44" rx="3" fill="url(#logoCyan)" />
+    <!-- Loop -->
+    <path d="M 25 21 H 46 C 56 21 62 27 62 36 C 62 45 56 51 46 51 H 25" 
+          fill="none" stroke="url(#logoCyan)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- Emerald SSL strand -->
+    <path d="M 37 32 L 50 45 C 54 49 54 55 50 59 C 46 63 40 63 36 59 L 30 53"
+          fill="none" stroke="url(#logoEmerald)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+    <circle cx="25" cy="21" r="2.5" fill="#FFFFFF" />
+    <circle cx="62" cy="36" r="2.5" fill="#00F0FF" />
+    <circle cx="44" cy="59" r="2" fill="#34D399" />
+  </g>
+
+  <!-- Wordmark Text -->
+  <g transform="translate(110, 20)">
+    <!-- Primary Title -->
+    <text x="0" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif" font-size="40" font-weight="800" letter-spacing="-1" fill="#F8FAFC">
+      Port<tspan fill="#00F0FF">loom</tspan>
+    </text>
+    <!-- Subtitle Badge -->
+    <text x="2" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif" font-size="12" font-weight="600" letter-spacing="2.5" fill="#94A3B8">
+      LOCAL DEVELOPER GATEWAY
+    </text>
+  </g>
+</svg>
