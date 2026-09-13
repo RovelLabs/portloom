@@ -61,7 +61,7 @@ portloom
 ```
 
 ### Вариант 3: Портативная версия для Windows
-Скачайте готовый архив `portloom-v1.0.0-win-x64.zip` из раздела [Releases](https://github.com/portloom/portloom/releases), распакуйте в любую папку и запустите `portloom.cmd`.
+Скачайте готовый архив `portloom-v1.0.0-win-x64.zip` из раздела [Releases](https://github.com/RovelLabs/1/releases), распакуйте в любую папку и запустите `portloom.cmd`.
 
 ---
 

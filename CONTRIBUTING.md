@@ -9,7 +9,7 @@
 
 1. Клонируйте репозиторий:
    ```bash
-   git clone https://github.com/portloom/portloom.git
+   git clone https://github.com/RovelLabs/1.git
    cd portloom
    ```
 2. Установите зависимости:

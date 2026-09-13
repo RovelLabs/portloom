@@ -31,6 +31,14 @@
   ],
   "author": "Portloom Contributors",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RovelLabs/1.git"
+  },
+  "homepage": "https://github.com/RovelLabs/1#readme",
+  "bugs": {
+    "url": "https://github.com/RovelLabs/1/issues"
+  },
   "engines": {
     "node": ">=18.0.0"
   },
