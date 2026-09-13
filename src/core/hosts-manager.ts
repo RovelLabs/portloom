@@ -173,17 +173,30 @@ export class HostsManager {
   }
 
   private async writeHostsFile(content: string): Promise<void> {
-    // Write via temp file in same directory or direct write
     const dir = path.dirname(this.hostsPath);
     const tempFile = path.join(dir, `hosts.tmp.${Date.now()}`);
     try {
       fs.writeFileSync(tempFile, content, 'utf8');
       fs.renameSync(tempFile, this.hostsPath);
-    } catch (err) {
-      // If rename fails (e.g. across drives or locked), try direct write
-      fs.writeFileSync(this.hostsPath, content, 'utf8');
+    } catch (err: any) {
       if (fs.existsSync(tempFile)) {
         try { fs.unlinkSync(tempFile); } catch {}
+      }
+
+      // Try direct write first
+      try {
+        fs.writeFileSync(this.hostsPath, content, 'utf8');
+      } catch (permErr: any) {
+        // Fallback: Trigger Windows UAC elevation helper
+        const pendingFile = path.join(this.storage.getBaseDir(), 'hosts_pending.txt');
+        fs.writeFileSync(pendingFile, content, 'utf8');
+
+        const psScript = `Start-Process powershell -Verb RunAs -Wait -ArgumentList '-NoProfile', '-ExecutionPolicy', 'Bypass', '-Command', 'Copy-Item -Path \\"${pendingFile}\\" -Destination \\"${this.hostsPath}\\" -Force; ipconfig /flushdns'`;
+        try {
+          await execAsync(`powershell -NoProfile -Command "${psScript}"`);
+        } catch (uacErr: any) {
+          throw new Error(`UAC Elevation failed: ${uacErr.message || String(uacErr)}`);
+        }
       }
     }
   }
