@@ -33,7 +33,7 @@ jobs:
         shell: pwsh
         run: |
           $tag = $env:GITHUB_REF_NAME
-          Compress-Archive -Path dist, bin, assets, portloom.cmd, Portloom.vbs, package.json, package-lock.json, README.md, LICENSE -DestinationPath "portloom-$tag-win-x64.zip"
+          Compress-Archive -Path dist, bin, assets, portloom.cmd, Portloom.vbs, package.json, package-lock.json, README.md, LICENSE -DestinationPath "portloom-$tag-win-x64.zip" -Force
           Get-FileHash -Algorithm SHA256 "portloom-$tag-win-x64.zip" | Out-File "SHA256SUMS.txt"
 
       - name: Publish GitHub Release
