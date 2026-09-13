@@ -15,11 +15,12 @@
 
 ---
 
-## 🟡 Next: V1.1 — V1.3
+- [x] **CLI Instant Link:** Консольная команда `portloom link <domain> <port>` для создания HTTPS маршрута и записи в hosts в 1 команду.
+- [x] **Native Windows Installer & UAC Helper:** Скрипты `scripts/install.ps1`, `scripts/installer.iss` (Inno Setup) и `Portloom.vbs`.
+- [x] **Self-Hosting Docker Support:** Полноценный `Dockerfile` и `docker-compose.yml` с healthcheck.
 - [ ] **WSL2 Automatic Port Bridge:** Прозрачное зеркалирование портов между подсистемой WSL2 (Ubuntu/Debian) и Windows хостом.
-- [ ] **Docker Containers Auto-Discovery:** Автоматическое обнаружение запущенных контейнеров с открытыми портами и предложение 1-клик создания локального SSL-домена.
-- [ ] **CLI Standalone Tooling:** Расширенный набор команд терминала (`portloom kill :3000`, `portloom link app.local:5173`).
-- [ ] **Config Export & Team Share:** Экспорт файла `.portloom.json` в корень репозитория проекта для автоматической синхронизации маршрутов и доменов между членами команды.
+- [ ] **Docker Containers Auto-Discovery:** Автоматическое обнаружение запущенных контейнеров с открытыми портами.
+- [ ] **Config Export & Team Share:** Экспорт файла `.portloom.json` в корень репозитория.
 
 ---
 

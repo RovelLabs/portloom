@@ -1,0 +1,25 @@
+services:
+  portloom:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: portloom-gateway
+    restart: unless-stopped
+    ports:
+      - "24224:24224" # Web Dashboard & Management API
+      - "80:80"       # Local HTTP Reverse Proxy Gateway
+      - "443:443"     # Local HTTPS Gateway with Dynamic SSL
+    volumes:
+      - portloom-data:/data
+    environment:
+      - NODE_ENV=production
+      - PORTLOOM_PORT=24224
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:24224/api/status"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  portloom-data:
+    driver: local

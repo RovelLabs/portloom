@@ -101,6 +101,59 @@ async function main() {
       break;
     }
 
+    case 'link': {
+      const domain = args[1];
+      const targetPort = args[2];
+      if (!domain || !targetPort) {
+        console.error('Usage: portloom link <domain> <target_port>');
+        console.error('Example: portloom link my-app.local 3000');
+        process.exit(1);
+      }
+
+      const config = storage.loadConfig();
+      const cleanDomain = domain.toLowerCase().trim();
+      const targetUrl = `http://127.0.0.1:${targetPort}`;
+
+      let route = config.routes.find(r => r.domain.toLowerCase() === cleanDomain);
+      if (route) {
+        route.targetUrl = targetUrl;
+      } else {
+        config.routes.push({
+          id: `route_${Date.now()}`,
+          domain: cleanDomain,
+          pathPrefix: '/',
+          targetUrl,
+          sslEnabled: true,
+          stripPrefix: false,
+          corsEnabled: true,
+          createdAt: new Date().toISOString()
+        });
+      }
+
+      certManager.getCertificateForDomain(cleanDomain);
+
+      const profile = config.profiles.find(p => p.id === config.activeHostsProfileId) || config.profiles[0];
+      const existingHost = profile.records.find(r => r.domain.toLowerCase() === cleanDomain);
+      if (!existingHost) {
+        profile.records.push({
+          id: `rec_${Date.now()}`,
+          domain: cleanDomain,
+          ip: '127.0.0.1',
+          enabled: true,
+          comment: 'CLI linked'
+        });
+      }
+
+      storage.saveConfig(config);
+      await hostsManager.applyProfile(profile);
+
+      console.log(`\n[SUCCESS] Linked https://${cleanDomain} -> ${targetUrl}`);
+      console.log(`* SSL Certificate generated (X.509 with SAN)`);
+      console.log(`* Added ${cleanDomain} -> 127.0.0.1 in hosts`);
+      console.log(`* DNS resolver cache flushed\n`);
+      break;
+    }
+
     case 'start': {
       const portIdx = args.indexOf('--port');
       const port = portIdx !== -1 && args[portIdx + 1] ? parseInt(args[portIdx + 1], 10) : 24224;

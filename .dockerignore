@@ -1,0 +1,9 @@
+node_modules
+dist
+dist-client
+*.log
+.git
+.portloom
+portloom-*.zip
+tests
+assets/screenshots
